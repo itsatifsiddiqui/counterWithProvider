@@ -23,6 +23,7 @@ class MyApp extends StatelessWidget {
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final counter = Provider.of<Counter>(context);
     return Scaffold(
       appBar: AppBar(
         title: Text("Provider Demo"),
@@ -35,7 +36,7 @@ class HomePage extends StatelessWidget {
               'You have pushed the button this many times:',
             ),
             Text(
-              '${Provider.of<Counter>(context).getCounter()}',
+              '${counter.getCounter()}',
               style: Theme.of(context).textTheme.display1,
             ),
           ],
@@ -45,13 +46,13 @@ class HomePage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.end,
         children: <Widget>[
           FloatingActionButton(
-            onPressed: Provider.of<Counter>(context).increment,
+            onPressed: counter.increment,
             tooltip: 'Increment',
             child: Icon(Icons.add),
           ),
           SizedBox(height: 10),
           FloatingActionButton(
-            onPressed: Provider.of<Counter>(context).decrement,
+            onPressed: counter.decrement,
             tooltip: 'Increment',
             child: Icon(Icons.remove),
           )
