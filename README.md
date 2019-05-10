@@ -1,4 +1,4 @@
-# counterprovider
+# CounterProvider
 
 A new Flutter project.
 
